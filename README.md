@@ -13,7 +13,7 @@ You have been provided with a starter project that includes user authentication 
 
 ### **1. Choose a Real-World Application**
 
-Select a meaningful use case for your CRUD operations. We will provide the list, you have to select it.
+Select a meaningful use case for your CRUD operations. We will provide the list, you have to select it ok.
 
 ### **2. Project Management with JIRA and SysML**
 
