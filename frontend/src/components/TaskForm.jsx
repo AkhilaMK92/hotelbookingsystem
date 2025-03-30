@@ -41,29 +41,38 @@ const TaskForm = ({ tasks, setTasks, editingTask, setEditingTask }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded mb-6">
-      <h1 className="text-2xl font-bold mb-4">{editingTask ? 'Your Form Name: Edit Operation' : 'Your Form Name: Create Operation'}</h1>
+      <h1 className="text-2xl font-bold mb-4">{editingTask ? 'Book Your Hotels' : 'Book Your Hotels'}</h1>
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Room Type"
         value={formData.title}
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
-      <input
-        type="text"
-        placeholder="Description"
-        value={formData.description}
-        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-        className="w-full mb-4 p-2 border rounded"
-      />
-      <input
-        type="date"
-        value={formData.deadline}
-        onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
-        className="w-full mb-4 p-2 border rounded"
-      />
+      <label htmlFor="checkInDate" className="block mb-1 font-medium">
+  Check-In Date
+</label>
+<input
+  id="checkInDate"
+  type="date"
+  value={formData.checkInDate ? new Date(formData.checkInDate).toISOString().split('T')[0] : ''}
+  onChange={(e) => setFormData({ ...formData, checkInDate: e.target.value })}
+  className="w-full mb-4 p-2 border rounded"
+/>
+      <label htmlFor="checkOutDate" className="block mb-1 font-medium">
+  Check-Out Date
+</label>
+<input
+  id="checkOutDate"
+  type="date"
+  value={formData.checkOutDate ? new Date(formData.checkInDate).toISOString().split('T')[0] : ''}
+  onChange={(e) => setFormData({ ...formData, checkOutDate: e.target.value })}
+  className="w-full mb-4 p-2 border rounded"
+/>
+
+
       <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
-        {editingTask ? 'Update Button' : 'Create Button'}
+        {editingTask ? 'Update Button' : 'Search'}
       </button>
     </form>
   );
